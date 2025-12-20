@@ -1,5 +1,8 @@
-package ru.job4j;
+package ru.job4j.bmb;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
         System.out.println("Привет. Мир");
