@@ -20,3 +20,7 @@ out
 *.log
 
 logs
+
+config/*
+
+dev/*
