@@ -1,8 +1,11 @@
 package ru.job4j.bmb.model;
 
 import jakarta.persistence.*;
+import ru.job4j.bmb.content.Content;
+import ru.job4j.bmb.services.MoodService;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Entity
 @Table(name = "mb_user")
@@ -64,6 +67,10 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Optional<Content> map(Mapper mapper) {
+        return Optional.of(mapper.add(this));
     }
 }
 
