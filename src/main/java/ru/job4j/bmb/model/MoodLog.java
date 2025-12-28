@@ -2,6 +2,7 @@ package ru.job4j.bmb.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +21,11 @@ public class MoodLog {
     private Mood mood;
 
     private long createdAt;
+
+    public MoodLog(User user, Mood mood) {
+        this.user = user;
+        this.mood = mood;
+    }
 
     public Long getId() {
         return id;
