@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface MoodLogRepository extends CrudRepository<MoodLog, Long> {
     List<MoodLog> findByUser(User user);
+
+    List<User> findUsersWhoDidNotVoteToday(long startOfDay, long endOfDay);
 }

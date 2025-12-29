@@ -27,6 +27,9 @@ public class MoodLog {
         this.mood = mood;
     }
 
+    public MoodLog() {
+    }
+
     public Long getId() {
         return id;
     }
