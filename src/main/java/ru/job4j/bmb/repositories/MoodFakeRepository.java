@@ -2,7 +2,6 @@ package ru.job4j.bmb.repositories;
 
 import org.springframework.test.fake.CrudRepositoryFake;
 import ru.job4j.bmb.model.Mood;
-import ru.job4j.bmb.repositories.MoodRepository;
 
 import java.util.ArrayList;
 import java.util.List;
