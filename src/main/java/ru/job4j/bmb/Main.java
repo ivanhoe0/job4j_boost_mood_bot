@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import ru.job4j.bmb.model.Award;
 import ru.job4j.bmb.model.Mood;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 @EnableScheduling
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class Main {
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
