@@ -20,6 +20,7 @@ public class MoodLog {
     @JoinColumn(name = "mood_id")
     private Mood mood;
 
+    @Column(name = "created_at")
     private long createdAt;
 
     public MoodLog(User user, Mood mood) {
