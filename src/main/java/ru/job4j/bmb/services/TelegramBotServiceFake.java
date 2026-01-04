@@ -1,5 +1,6 @@
 package ru.job4j.bmb.services;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -10,6 +11,11 @@ import ru.job4j.bmb.content.Content;
 @Service
 @Conditional(FakeModeCondition.class)
 public class TelegramBotServiceFake extends TelegramLongPollingBot implements SentContent {
+
+    @PostConstruct
+    public void printName() {
+        System.out.println("Создание бина TelegramBotServiceFake");
+    }
 
     @Override
     public void onUpdateReceived(Update update) {

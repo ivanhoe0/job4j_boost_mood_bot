@@ -1,5 +1,6 @@
 package ru.job4j.bmb.services;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,11 @@ public class TelegramBotService extends TelegramLongPollingBot implements SentCo
         super(botToken);
         this.handler = handler;
         this.botName = botName;
+    }
+
+    @PostConstruct
+    public void printName() {
+        System.out.println("Создание бина TelegramBotService");
     }
 
     @Override

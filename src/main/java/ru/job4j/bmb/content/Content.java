@@ -49,5 +49,13 @@ public class Content {
     public void setAudio(InputFile audio) {
         this.audio = audio;
     }
+
+    @Override
+    public String toString() {
+        return "Content{"
+                + "chatId=" + chatId
+                + ", text='" + text + '\''
+                + '}';
+    }
 }
 
