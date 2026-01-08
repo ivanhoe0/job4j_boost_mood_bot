@@ -107,4 +107,10 @@ public class MoodService {
         content.setText(sb.toString());
         return Optional.of(content);
     }
+
+    public Optional<Content> giveAdvice(long chatId, Long clientId) {
+        var user = userRepository.findByClientId(clientId);
+        var moodLog = moodLogRepository.findLastMoodLogOfUser(user);
+        return Optional.of(recommendationEngine.adviceFor(chatId, moodLog.getMood().getId()));
+    }
 }

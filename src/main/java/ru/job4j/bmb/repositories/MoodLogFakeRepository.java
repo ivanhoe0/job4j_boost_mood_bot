@@ -46,6 +46,14 @@ public class MoodLogFakeRepository
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public MoodLog findLastMoodLogOfUser(User user) {
+        Comparator<MoodLog> comparator = Comparator.comparingLong(MoodLog::getCreatedAt).reversed();
+        return memory.values().stream()
+                .filter(moodLog -> moodLog.getUser().equals(user))
+                .max(comparator).get();
+    }
+
     public List<MoodLog> findMoodLogsForWeek(Long userId, long weekStart) {
         return memory.values().stream()
                 .filter(moodLog -> moodLog.getUser().getId().equals(userId))
